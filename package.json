@@ -1,0 +1,9 @@
+{
+  "name": "typescript",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@antv/f2": "^3.6.3",
+    "@antv/g2": "^4.0.7"
+  }
+}
