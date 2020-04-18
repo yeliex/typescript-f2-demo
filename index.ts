@@ -138,21 +138,20 @@ chart
   .color("#746A7C")
   .shape("smooth");
 
-const shape = new G.Shape.Text({
-  attrs: {
-    fontFamily: ""
-  }
-});
-
 Shape.registerShape("point", "test-icon", {
   draw(cfg, group) {
-    console.log(cfg, group);
-
-    if (cfg.origin.date === "1490284800000") {
-        const el = group.addShape(shape)
-
-        return el;
-    }
+    const el = group.addShape("Text", {
+      attrs: {
+        fontFamily: "FontAwesome",
+        fontSize: 10,
+        x: cfg.x,
+        y: cfg.y,
+        textAlign: "center",
+        fill: '#000',
+        text: String.fromCharCode(parseInt('f863',16))
+      }
+    });
+    return el;
   }
 });
 

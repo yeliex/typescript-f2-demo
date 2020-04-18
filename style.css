@@ -14,9 +14,9 @@ h1, h2 {
 
 
 @font-face {
-  font-family: 'Font Awesome 5';
+  font-family: 'FontAwesome';
   font-style: normal;
   font-weight: 400;
-  src: url('@{fa-font-path}/fa-regular-400.woff2') format('woff2');
+  src: url('https://pro.fontawesome.com/releases/v5.13.0/webfonts/fa-regular-400.woff2') format('woff2');
 }
 
