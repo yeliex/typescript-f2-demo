@@ -142,11 +142,12 @@ Shape.registerShape("point", "test-icon", {
   draw(cfg, group) {
     const el = group.addShape("Text", {
       attrs: {
-        fontFamily: "Font Awesome 5 Pro",
+        fontFamily: "FontAwesome",
         fontSize: 20,
         x: cfg.x,
         y: cfg.y,
         textAlign: "center",
+        fontWeight: 400,
         fill: "#000",
         text: String.fromCharCode(parseInt("f0c2", 16))
       }
@@ -155,19 +156,15 @@ Shape.registerShape("point", "test-icon", {
   }
 });
 
-const link = window.document.createElement("link");
-link.rel = "stylesheet";
-link.type = "text/css";
-link.href = "https://pro.fontawesome.com/releases/v5.13.0/css/all.css";
-document.getElementsByTagName("head")[0].appendChild(link);
-
 chart
   .point()
   .position("date*pv")
   .shape("test-icon");
 
 var image = new Image();
-image.src = link.href;
-image.onerror = function() {
+image.src =
+  "https://pro.fontawesome.com/releases/v5.13.0/webfonts/fa-regular-400.woff2";
+
+image.onerror = function(e) {
   chart.render();
 };
