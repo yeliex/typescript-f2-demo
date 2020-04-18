@@ -142,22 +142,32 @@ Shape.registerShape("point", "test-icon", {
   draw(cfg, group) {
     const el = group.addShape("Text", {
       attrs: {
-        fontFamily: "FontAwesome",
-        fontSize: 10,
+        fontFamily: "Font Awesome 5 Pro",
+        fontSize: 20,
         x: cfg.x,
         y: cfg.y,
         textAlign: "center",
-        fill: '#000',
-        text: String.fromCharCode(parseInt('f863',16))
+        fill: "#000",
+        text: String.fromCharCode(parseInt("f0c2", 16))
       }
     });
     return el;
   }
 });
 
+const link = window.document.createElement("link");
+link.rel = "stylesheet";
+link.type = "text/css";
+link.href = "https://pro.fontawesome.com/releases/v5.13.0/css/all.css";
+document.getElementsByTagName("head")[0].appendChild(link);
+
 chart
   .point()
   .position("date*pv")
   .shape("test-icon");
 
-chart.render();
+var image = new Image();
+image.src = link.href;
+image.onerror = function() {
+  chart.render();
+};
